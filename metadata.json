@@ -1,0 +1,5 @@
+{
+  "name": "AI Portrait Studio",
+  "description": "An application to transform user photos into professional portraits in various styles using AI. Users can upload their photos, customize style, shot angle, outfit, and quality, and receive high-quality portraits.",
+  "requestFramePermissions": []
+}
