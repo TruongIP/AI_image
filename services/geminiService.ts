@@ -1,10 +1,19 @@
-
-import { GoogleGenAI, Modality, Part } from "@google/genai";
+// Đây là code chính xác cho phần đầu file geminiService.ts
+import { GoogleGenerativeAI, Modality, Part } from "@google/genai";
 import type { PortraitOptions, GeneratedImage, ImageFile } from '../types';
+
+// 1. Đọc API key từ import.meta.env
+const apiKey = import.meta.env.VITE_API_KEY;
+
+// 2. Kiểm tra an toàn để sửa lỗi 'possibly undefined'
+if (!apiKey) {
+  throw new Error("VITE_API_KEY is not defined in your .env file or Vercel settings.");
+}
 
 const PORTRAIT_MODEL_NAME = "gemini-2.5-flash-image-preview";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+// 3. Sử dụng tên class và biến apiKey chính xác
+const ai = new GoogleGenerativeAI({ apiKey });
 const model = ai.models;
 
 const fileToGenerativePart = (file: ImageFile): Part => {
